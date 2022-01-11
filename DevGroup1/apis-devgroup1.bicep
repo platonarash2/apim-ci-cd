@@ -17,11 +17,12 @@ resource api 'Microsoft.ApiManagement/service/apis@2021-04-01-preview' = {
   parent: apim
   name: 'petstore'
   properties:{
+    displayName: 'DEVGROUP1-petstore'
     description:'This is a Pet Store API'
     serviceUrl: 'https://petstore.swagger.io/v2'
     format: 'openapi+json-link'
     value: 'https://petstore.swagger.io/v2/swagger.json'
-    path: '/petstore'
+    path: '/devgroup1-petstore'
     protocols:[
       'https'
     ]
