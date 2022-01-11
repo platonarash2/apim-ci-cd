@@ -6,11 +6,11 @@
 param location string = 'northeurope'
 
 @description('Virual Network Name')
-param vnetName string = 'my-vnet'
+param vnetName string = 'prod-my-vnet'
 
 
 @description('APIM')
-param apimName string = 'qa-apimarra'
+param apimName string = 'prod-apimarra'
 
 //*************************************************************************************
 
