@@ -1,1 +1,0 @@
-az deployment group create  -g qa-apim -f apis-devgroup1.bicep --what-if

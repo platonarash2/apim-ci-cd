@@ -15,8 +15,9 @@ resource apim 'Microsoft.ApiManagement/service@2021-04-01-preview' existing = {
 
 resource api 'Microsoft.ApiManagement/service/apis@2021-04-01-preview' = {
   parent: apim
-  name: 'petstore'
+  name: 'DEVGROUP2-petstore'
   properties:{
+    displayName: 'DEVGROUP2-petstore'
     description:'This is a Pet Store API'
     serviceUrl: 'https://petstore.swagger.io/v2'
     format: 'openapi+json-link'
@@ -36,7 +37,7 @@ var api_policy_xml  = '''
 <policies>
     <inbound>
         <set-query-parameter name="code" exists-action="override">
-            <value>Notused-DEVGROUP1</value>
+            <value>Notused-DEVGROUP2</value>
         </set-query-parameter>
         <base />
     </inbound>
