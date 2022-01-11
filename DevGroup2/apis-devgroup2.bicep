@@ -2,7 +2,7 @@
 //*************************************************************************************
 
 @description('Required. Existing Azure API Management Name.')
-param apimName string
+param apimName string = 'qa-apimarra'
 
 //*************************************************************************************
 
@@ -15,13 +15,14 @@ resource apim 'Microsoft.ApiManagement/service@2021-04-01-preview' existing = {
 
 resource api 'Microsoft.ApiManagement/service/apis@2021-04-01-preview' = {
   parent: apim
-  name: 'petstore'
+  name: 'DEVGROUP2-petstore'
   properties:{
+    displayName: 'DEVGROUP2-petstore'
     description:'This is a Pet Store API'
-    serviceUrl: 'https://weatherapi-func.azurewebsites.net/api'
+    serviceUrl: 'https://petstore.swagger.io/v2'
     format: 'openapi+json-link'
     value: 'https://petstore.swagger.io/v2/swagger.json'
-    path: '/petstore'
+    path: '/devgroup2-petstore'
     protocols:[
       'https'
     ]
@@ -36,7 +37,7 @@ var api_policy_xml  = '''
 <policies>
     <inbound>
         <set-query-parameter name="code" exists-action="override">
-            <value>Notused</value>
+            <value>Notused-DEVGROUP2</value>
         </set-query-parameter>
         <base />
     </inbound>
