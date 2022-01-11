@@ -6,13 +6,14 @@
 param location string = 'northeurope'
 
 @description('Virual Network Name')
-param vnetName string = 'my-vnet'
+param vnetName string = 'qa-my-vnet'
 
 
 @description('APIM')
 param apimName string = 'qa-apimarra'
 
 //*************************************************************************************
+
 
 // Vnet
 module vnet './modules/vnet.bicep' = { 
