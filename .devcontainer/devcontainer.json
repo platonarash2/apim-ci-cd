@@ -21,6 +21,7 @@
 	"remoteUser": "vscode",
 	"features": {
 		"git": "latest",
-		"azure-cli": "latest"
+		"azure-cli": "latest",
+		"terraform": "latest"
 	}
 }
