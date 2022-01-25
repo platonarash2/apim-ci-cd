@@ -1,0 +1,37 @@
+ terraform init
+
+https://cloudskills.io/blog/terraform-azure-07
+
+terraform import <Terraform Resource Name>.<Resource Label> <Azure Resource ID>
+
+az group show --name qa-apim 
+
+{
+  "id": "/subscriptions/e9aac0f0-83bd-43cf-ab35-c8e3eccc8932/resourceGroups/qa-apim",
+  "location": "northeurope",
+  "managedBy": null,
+  "name": "qa-apim",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+
+terraform import azurerm_resource_group.rg /subscriptions/e9aac0f0-83bd-43cf-ab35-c8e3eccc8932/resourceGroups/qa-apim
+
+terraform plan
+
+
+https://marcelzehner.ch/2020/07/04/how-to-bring-existing-azure-resources-under-terraform-management/
+
+terraform import azurerm_api_management.apim /subscriptions/e9aac0f0-83bd-43cf-ab35-c8e3eccc8932/resourceGroups/qa-apim/providers/Microsoft.ApiManagement/service/qa-apimarra
+
+Terraform APIM+API
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management_api
+
+
+terraform plan
+terraform apply
+terraform apply -refresh-only
